@@ -114,6 +114,13 @@
                     "target": [
                         "TargetStartView"
                     ]
+                },
+                {
+                    "name": "RouteResultView",
+                    "pattern": "result/",
+                    "target": [
+                        "TargetResultView"
+                    ]
                 }
             ],
             "targets": {
@@ -122,7 +129,16 @@
                     "transition": "slide",
                     "clearControlAggregation": false,
                     "viewId": "StartView",
-                    "viewName": "StartView"
+                    "viewName": "StartView",
+                    "viewLevel": 0
+                },
+                "TargetResultView": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ResultView",
+                    "viewName": "ResultView",
+                    "viewLevel": 1
                 }
             }
         },
