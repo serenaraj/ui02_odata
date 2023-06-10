@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZODATA_XXXX_SRV_01" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="POHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ponumber"/>
+                </Key>
+                <Property Name="Ponumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Potype" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Doc. Category" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Orderdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Vendornumber" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Purchaseorganization" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Purchasing Org." sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="Lastchangedatetime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToItems" Relationship="ZODATA_XXXX_SRV_01.HeaderItems" FromRole="FromRole_HeaderItems" ToRole="ToRole_HeaderItems"/>
+            </EntityType>
+            <EntityType Name="POItems" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ponumber"/>
+                    <PropertyRef Name="Poitemno"/>
+                </Key>
+                <Property Name="Ponumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Poitemno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Materialnumber" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="Unit" sap:label="PO Quantity" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Unit" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Order Unit" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Netprice" Type="Edm.Decimal" Precision="12" Scale="3" sap:unicode="false" sap:label="Net Price" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="CDSPOHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ponumber"/>
+                </Key>
+                <Property Name="Ponumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Potype" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Doc. Category"/>
+                <Property Name="Orderdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date"/>
+                <Property Name="Vendornumber" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Supplier"/>
+                <Property Name="Purchaseorganization" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Purchasing Org."/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:semantics="currency-code"/>
+                <Property Name="Lastchangedatetime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToItems" Relationship="ZODATA_XXXX_SRV_01.CDSPOHeaderToItems" FromRole="FromRole_CDSPOHeaderToItems" ToRole="ToRole_CDSPOHeaderToItems"/>
+            </EntityType>
+            <EntityType Name="CDSPOItems" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ponumber"/>
+                    <PropertyRef Name="Poitemno"/>
+                </Key>
+                <Property Name="Ponumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Poitemno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Materialnumber" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Material"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="Unit" sap:label="PO Quantity"/>
+                <Property Name="Unit" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Order Unit" sap:semantics="unit-of-measure"/>
+                <Property Name="Netprice" Type="Edm.Decimal" Precision="12" Scale="3" sap:unicode="false" sap:label="Net Price"/>
+            </EntityType>
+            <EntityType Name="Vendor" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lifnr"/>
+                </Key>
+                <Property Name="Sortl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Search term" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pstlz" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mcod3" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mcod1" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vendor" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Loevm" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Deletion flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZC_TRAIN_PO_HEADERType" sap:label="Purchase Order CDS View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ponumber"/>
+                </Key>
+                <Property Name="ponumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document" sap:quickinfo="Purchasing Document Number"/>
+                <Property Name="potype" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purch. Doc. Category" sap:quickinfo="Purchasing Document Category"/>
+                <Property Name="orderdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Document Date" sap:quickinfo="Purchasing Document Date"/>
+                <Property Name="vendornumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Supplier" sap:quickinfo="Account Number of Supplier"/>
+                <Property Name="purchaseorganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purch. Organization" sap:quickinfo="Purchasing Organization"/>
+                <Property Name="currency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="lastchangedatetime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Time Stamp" sap:quickinfo="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+                <NavigationProperty Name="to_Items" Relationship="ZODATA_XXXX_SRV_01.assoc_1A291468FC33041BD0DFB596283ED565" FromRole="FromRole_assoc_1A291468FC33041BD0DFB596283ED565" ToRole="ToRole_assoc_1A291468FC33041BD0DFB596283ED565"/>
+            </EntityType>
+            <EntityType Name="ZC_TRAIN_PO_ITEMSType" sap:label="Purchase Order Items" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ponumber"/>
+                    <PropertyRef Name="poitemno"/>
+                </Key>
+                <Property Name="ponumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document" sap:quickinfo="Purchasing Document Number"/>
+                <Property Name="poitemno" Type="Edm.String" Nullable="false" MaxLength="5" sap:display-format="NonNegative" sap:label="Item" sap:quickinfo="Item Number of Purchasing Document"/>
+                <Property Name="materialnumber" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Order Quantity" sap:quickinfo="Purchase Order Quantity"/>
+                <Property Name="unit" Type="Edm.String" MaxLength="3" sap:label="Order Unit" sap:quickinfo="Purchase Order Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="netprice" Type="Edm.Decimal" Precision="12" Scale="3" sap:label="Net Order Price" sap:quickinfo="Net Price in Purchasing Document (in Document Currency)"/>
+            </EntityType>
+            <Association Name="CDSPOHeaderToItems" sap:content-version="1">
+                <End Type="ZODATA_XXXX_SRV_01.CDSPOHeader" Multiplicity="1" Role="FromRole_CDSPOHeaderToItems"/>
+                <End Type="ZODATA_XXXX_SRV_01.CDSPOItems" Multiplicity="*" Role="ToRole_CDSPOHeaderToItems"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CDSPOHeaderToItems">
+                        <PropertyRef Name="Ponumber"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CDSPOHeaderToItems">
+                        <PropertyRef Name="Ponumber"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="HeaderItems" sap:content-version="1">
+                <End Type="ZODATA_XXXX_SRV_01.POHeader" Multiplicity="1" Role="FromRole_HeaderItems"/>
+                <End Type="ZODATA_XXXX_SRV_01.POItems" Multiplicity="*" Role="ToRole_HeaderItems"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HeaderItems">
+                        <PropertyRef Name="Ponumber"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HeaderItems">
+                        <PropertyRef Name="Ponumber"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_1A291468FC33041BD0DFB596283ED565" sap:content-version="1">
+                <End Type="ZODATA_XXXX_SRV_01.ZC_TRAIN_PO_HEADERType" Multiplicity="1" Role="FromRole_assoc_1A291468FC33041BD0DFB596283ED565"/>
+                <End Type="ZODATA_XXXX_SRV_01.ZC_TRAIN_PO_ITEMSType" Multiplicity="*" Role="ToRole_assoc_1A291468FC33041BD0DFB596283ED565"/>
+            </Association>
+            <EntityContainer Name="ZODATA_XXXX_SRV_01_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZC_TRAIN_PO_HEADER" EntityType="ZODATA_XXXX_SRV_01.ZC_TRAIN_PO_HEADERType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZC_TRAIN_PO_ITEMS" EntityType="ZODATA_XXXX_SRV_01.ZC_TRAIN_PO_ITEMSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="POHeaderSet" EntityType="ZODATA_XXXX_SRV_01.POHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="POItemsSet" EntityType="ZODATA_XXXX_SRV_01.POItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CDSPOHeaderSet" EntityType="ZODATA_XXXX_SRV_01.CDSPOHeader" sap:content-version="1"/>
+                <EntitySet Name="CDSPOItemsSet" EntityType="ZODATA_XXXX_SRV_01.CDSPOItems" sap:content-version="1"/>
+                <EntitySet Name="VendorSet" EntityType="ZODATA_XXXX_SRV_01.Vendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_1A291468FC33041BD0DFB596283ED565" Association="ZODATA_XXXX_SRV_01.assoc_1A291468FC33041BD0DFB596283ED565" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_TRAIN_PO_HEADER" Role="FromRole_assoc_1A291468FC33041BD0DFB596283ED565"/>
+                    <End EntitySet="ZC_TRAIN_PO_ITEMS" Role="ToRole_assoc_1A291468FC33041BD0DFB596283ED565"/>
+                </AssociationSet>
+                <AssociationSet Name="CDSPOHeaderToItemsSet" Association="ZODATA_XXXX_SRV_01.CDSPOHeaderToItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CDSPOHeaderSet" Role="FromRole_CDSPOHeaderToItems"/>
+                    <End EntitySet="CDSPOItemsSet" Role="ToRole_CDSPOHeaderToItems"/>
+                </AssociationSet>
+                <AssociationSet Name="HeaderItemsSet" Association="ZODATA_XXXX_SRV_01.HeaderItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="POHeaderSet" Role="FromRole_HeaderItems"/>
+                    <End EntitySet="POItemsSet" Role="ToRole_HeaderItems"/>
+                </AssociationSet>
+                <FunctionImport Name="Changedate" ReturnType="ZODATA_XXXX_SRV_01.POHeader" EntitySet="POHeaderSet" m:HttpMethod="POST">
+                    <Parameter Name="Ponumber" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Purchasing Doc."/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZODATA_XXXX_SRV_01.ZODATA_XXXX_SRV_01_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZODATA_XXXX_SRV_01.ZODATA_XXXX_SRV_01_Entities/ZC_TRAIN_PO_HEADER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Items"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/sap/ZODATA_XXXX_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://appsrv61-eam.rizing.io:44301/sap/opu/odata/sap/ZODATA_XXXX_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

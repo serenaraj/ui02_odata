@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.5"
+metadata:
+  name: com.rizing.ui5.sr01.ui02odata
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://appsrv61-eam.rizing.io:44301
+          client: "100"
+        app:
+          name: ZSR01_UI5_ODATA
+          description: UI5 Odata Application
+          package: $TMP
+          transport: ""
